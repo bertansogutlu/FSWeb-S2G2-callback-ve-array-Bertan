@@ -56,8 +56,8 @@ function Yillar(arr, callback) {
 
 function Kazananlar(arr, callback) {
 	const finals = callback(arr);
-	const kazananlar = map( obj =>  )
-
+	const kazananlar = finals.map( obj => (obj["Home Team Goals"] >= obj["Away Team Goals"] ? obj["Home Team Name"] : obj["Away Team Name"])  )
+	return kazananlar;
 }
 
 
