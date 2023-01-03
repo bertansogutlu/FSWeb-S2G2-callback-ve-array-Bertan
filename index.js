@@ -73,10 +73,13 @@ function Kazananlar(arr, callback) {
 	💡 İPUCU: her cümlenin adım 4'te belirtilen cümleyle birebir aynı olması gerekmektedir.
 */
 
-function YillaraGoreKazananlar(/* kodlar buraya */) {
-	
-/* kodlar buraya */
-
+function YillaraGoreKazananlar(arr, callbackFinaller, callbackYillar, callbackKazananlar) {
+	const finaller = callbackFinaller(arr);
+	const yillar = callbackYillar(arr, callbackFinaller);
+	const kazananlar = callbackKazananlar(arr, callbackFinaller);
+	const tabela = [];
+	for (let i in finaller) tabela.push(`${yillar[i]} yılında, ${kazananlar[i]} dünya kupasını kazandı!`);
+	return tabela;
 }
 
 
