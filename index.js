@@ -26,7 +26,8 @@ console.log(fifaData.filter( obj => (obj.Year === 2014 && obj.Stage === "Final")
 */
 
 function Finaller(arr) {
-    return arr.filter( obj => obj.Stage === "Final" );
+	const finals = arr.filter( obj => obj.Stage === "Final" );
+    return finals;
 }
 
 
@@ -39,7 +40,8 @@ function Finaller(arr) {
 	*/
 
 function Yillar(arr, callback) {
-	const years = callback(arr).map( obj => obj.Year )
+	const finals = callback(arr);
+	const years = finals.map( obj => obj.Year );
     return years;
 }
 
@@ -52,10 +54,10 @@ function Yillar(arr, callback) {
 	💡 İPUCU: Beraberlikler(ties) için şimdilik endişelenmeyin (Detaylı bilgi için README dosyasına bakabilirsiniz.)
 	4. Tüm kazanan ülkelerin isimlerini içeren `kazananlar` adında bir dizi(array) döndürecek(return)  */ 
 
-function Kazananlar(/* kodlar buraya */) {
-	
-    /* kodlar buraya */
-	
+function Kazananlar(arr, callback) {
+	const finals = callback(arr);
+	const kazananlar = map( obj =>  )
+
 }
 
 
