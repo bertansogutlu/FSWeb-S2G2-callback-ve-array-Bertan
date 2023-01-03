@@ -38,9 +38,9 @@ function Finaller(arr) {
 	3. Finaller data setindeki tüm yılları içeren "years" adındaki diziyi(array) döndürecek
 	*/
 
-function Yillar(/* kodlar buraya */) {
-	
-    /* kodlar buraya */
+function Yillar(arr, callback) {
+	const years = callback(arr).map( obj => obj.Year )
+    return years;
 }
 
 
