@@ -56,7 +56,7 @@ function Yillar(arr, callback) {
 
 function Kazananlar(arr, callback) {
 	const finals = callback(arr);
-	const kazananlar = finals.map( obj => (obj["Home Team Goals"] > obj["Away Team Goals"] ? obj["Home Team Name"] : obj["Away Team Name"])  )
+	const kazananlar = finals.map( obj => (obj["Home Team Goals"] > obj["Away Team Goals"] ? obj["Home Team Name"] : obj["Away Team Name"]) );
 	return kazananlar;
 }
 
@@ -97,11 +97,13 @@ function YillaraGoreKazananlar(arr, callbackFinaller, callbackYillar, callbackKa
 	
 */
 
-function OrtalamaGolSayisi(/* kodlar buraya */) {
+function OrtalamaGolSayisi(callbackFinaller) {
+	const toplam = callbackFinaller.reduce( (total, final) => (total + final["Home Team Goals"] + final["Away Team Goals"]), 0 );
+	const ortalamaGol = (toplam / callbackFinaller.length).toFixed(2);
 	
-    /* kodlar buraya */
-	
+    return ortalamaGol;
 }
+console.log(OrtalamaGolSayisi(Finaller(fifaData)))
 
 
 
