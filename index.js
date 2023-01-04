@@ -115,11 +115,15 @@ console.log(OrtalamaGolSayisi(Finaller(fifaData)))
 	İpucu: "takım kısaltmaları" (team initials) için datada araştırma yapın!
 İpucu: `.reduce` Kullanın*/
 
-function UlkelerinKazanmaSayilari(/* kodlar buraya */) {
-	
-    /* kodlar buraya */
-	
+function UlkelerinKazanmaSayilari(arr, initials) {
+	const finals = arr.filter( obj => ( obj.Stage === "Final" && 
+    ((obj["Home Team Initials"] === initials && (obj["Home Team Goals"] > obj["Away Team Goals"]))
+	||(obj["Away Team Initials"] === initials && (obj["Away Team Goals"] > obj["Home Team Goals"])))
+	) )
+	return 	finals.length;
 }
+
+console.log(UlkelerinKazanmaSayilari(fifaData, "FRG"))
 
 
 
